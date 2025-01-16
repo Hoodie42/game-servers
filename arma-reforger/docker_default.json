@@ -1,0 +1,44 @@
+{
+	"bindAddress": "",
+	"bindPort": 2001,
+	"publicAddress": "",
+	"publicPort": 2001,
+	"a2s": {
+		"address": "",
+		"port": 17777
+	},
+	"rcon": {
+		"address": "",
+		"port": 19999,
+		"password": "",
+		"permission": ""
+	},
+	"game": {
+		"name": "Arma Reforger Docker Server",
+		"password": "",
+		"passwordAdmin": "",
+		"admins": [],
+		"scenarioId": "{ECC61978EDCC2B5A}Missions/23_Campaign.conf",
+		"maxPlayers": 32,
+		"visible": true,
+		"supportedPlatforms": [
+			"PLATFORM_PC",
+			"PLATFORM_XBL",
+			"PLATFORM_PSN"
+		],
+		"gameProperties": {
+			"serverMaxViewDistance": 2500,
+			"serverMinGrassDistance": 50,
+			"networkViewDistance": 1000,
+			"disableThirdPerson": true,
+			"fastValidation": true,
+			"battlEye": true,
+			"missionHeader": {
+				"m_iPlayerCount": 40,
+				"m_eEditableGameFlags": 6,
+				"m_eDefaultGameFlags": 6
+			}
+		},
+		"mods": []
+	}
+}

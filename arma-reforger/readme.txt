@@ -1,0 +1,1 @@
+copy config file to ./reforger/Configs/config.json
