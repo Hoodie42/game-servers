@@ -1,0 +1,46 @@
+Serilog:
+  Using: [ "Serilog.Sinks.Console", "Serilog.Sinks.Loki" ]
+  MinimumLevel:
+    Default: Information
+    Override:
+      SS14: Debug
+      Microsoft: "Warning"
+      Microsoft.Hosting.Lifetime: "Information"
+      Microsoft.AspNetCore: Warning
+
+  WriteTo:
+    - Name: Console
+      Args:
+        OutputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3} {SourceContext}] {Message:lj}{NewLine}{Exception}"
+
+  #Enrich: [ "FromLogContext" ]
+
+# Important if using Git update method
+# BaseUrl: "http://localhost:5000/"
+
+AllowedHosts: "*"
+
+Servers:
+  Instances:
+    # ID of your server.
+    station_spatiale:
+      # Name of the server
+      Name: "Station Spatiale 14"
+      ApiToken: "use better token" # API token to control this instance remotely like run updates, restart server.
+      ApiPort: 1212 # API port OF THE GAME SERVER. This has to match the 1212 HTTP status API (described below). Otherwise the watchdog can't contact the game server for stuff.
+      
+      # Auto update configuration. This can be left out if you do not need auto updates. Example is for our officially hosted builds.
+      # See above for alternatives.
+      #UpdateType: "Manifest"
+      #Updates:
+      #ManifestUrl: "https://wizards.cdn.spacestation14.com/fork/wizards/manifest"
+      UpdateType: "Git"
+      Updates:
+        # BaseUrl: The URL of the Git repository to watch.
+        # This is distinct from the Watchdog-wide BaseUrl.
+        BaseUrl: "https://github.com/Hoodie42/space-station-14"
+        # Branch: The branch to watch.
+        Branch: "spatiale"
+        # Hybrid ACZ: When enabled, the game server hosts the client zip rather than the watchdog.
+        # As of the introduction of delta updating this is now the better way to handle this.
+        HybridACZ: true

@@ -1,0 +1,15 @@
+---
+services:
+  space-station:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "1212:1212/udp"
+      - "1212:1212/tcp"
+    volumes:
+      - ss14:/SS14.Watchdog/SS14.Watchdog/bin/Release
+    environment:
+      - DOTNET_CLI_HOME=/tmp
+
+volumes:
+  ss14:

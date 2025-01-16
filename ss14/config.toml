@@ -1,0 +1,34 @@
+[net]
+# Reducing tickrate to 30 is basically unnoticeable
+# but reduces server, client and network load dramatically.
+tickrate = 30
+
+[game]
+# Changes the name of the server as it appears in the lobby and launcher.
+hostname = "server name"
+# Enables the lobby instead of straight up throwing clients into a game.
+lobbyenabled = true
+maxplayers = 60
+soft_max_players = 50
+role_timers = false
+# panic_bunker.enabled = true
+
+[auth]
+# Enforces authentication so that ALL connecting clients must have a proper account.
+# Otherwise, guest logins are allowed.
+# Possible values here are: 0 (optional), 1 (required), 2 (disabled)
+mode = 1
+
+[hub]
+advertise = true
+# Uncomment to change the server URL advertised on the master server list.
+# Use this if you want an ss14s:// URL or have configured the server behind a reverse proxy or any of that.
+# Defaults to "ss14://[public server IP]:networking port"
+# server_url = "ss14://..."
+tags = "rp:low,region:eu_w" # comma separated list of tags
+
+[console]
+login_host_user = "admin login"
+
+# [events]
+# enabled = false
