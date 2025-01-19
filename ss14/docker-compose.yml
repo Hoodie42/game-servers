@@ -2,6 +2,7 @@
 services:
   space-station:
     build: .
+    container_name: ss14-docker
     restart: unless-stopped
     ports:
       - "1212:1212/udp"
@@ -13,3 +14,8 @@ services:
 
 volumes:
   ss14:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /root/ss14-docker/ss14
