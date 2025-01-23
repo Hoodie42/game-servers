@@ -1,26 +1,27 @@
 {
-	"bindAddress": "",
+	"bindAddress": "0.0.0.0",
 	"bindPort": 2001,
-	"publicAddress": "",
+	"publicAddress": "public ip here",
 	"publicPort": 2001,
-	"a2s": {
-		"address": "",
-		"port": 17777
-	},
 	"rcon": {
-		"address": "",
+		"address": "public ip here",
 		"port": 19999,
-		"password": "",
-		"permission": ""
+		"password": "findbetterpassword",
+		"permission": "admin",
+		"blacklist": [],
+		"whitelist": []
 	},
 	"game": {
-		"name": "Arma Reforger Docker Server",
+		"name": "server name",
 		"password": "",
-		"passwordAdmin": "",
-		"admins": [],
+		"passwordAdmin": "findbetterpasswordagain",
+		"admins" : [
+			"admin id"
+		],
 		"scenarioId": "{ECC61978EDCC2B5A}Missions/23_Campaign.conf",
-		"maxPlayers": 32,
+		"maxPlayers": 64,
 		"visible": true,
+		"crossPlatform": true,
 		"supportedPlatforms": [
 			"PLATFORM_PC",
 			"PLATFORM_XBL",
@@ -30,15 +31,18 @@
 			"serverMaxViewDistance": 2500,
 			"serverMinGrassDistance": 50,
 			"networkViewDistance": 1000,
-			"disableThirdPerson": true,
+			"disableThirdPerson": false,
 			"fastValidation": true,
 			"battlEye": true,
-			"missionHeader": {
-				"m_iPlayerCount": 40,
-				"m_eEditableGameFlags": 6,
-				"m_eDefaultGameFlags": 6
-			}
+			"VONDisableUI": false,
+			"VONDisableDirectSpeechUI": false
 		},
 		"mods": []
+	},
+	"operating": {
+		"lobbyPlayerSynchronise": true,
+        	"joinQueue" : {
+            		"maxSize" : 10
+        	}
 	}
 }
