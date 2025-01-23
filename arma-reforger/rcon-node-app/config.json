@@ -1,0 +1,5 @@
+{
+    "address": "server public ip here",
+    "port": 19999,
+    "token": "server rcon password here"
+}
