@@ -6,9 +6,11 @@ const arguments = process.argv
 if (arguments.length < 3) {
 
     console.log('you need to specify a command !');
+    console.log('type: npm run start help');
 
 } else if (arguments[2] == 'help') {
 
+    console.log('type: "npm run start" followed by one of these commands:');
     console.log('players');
     console.log('restart');
     console.log('kick [id]');
@@ -37,7 +39,9 @@ if (arguments.length < 3) {
             // success is true when logging in worked, false if not
             // console.log('command: ' + arguments[2]);
             await a3r.rconCommand(arguments[2]);
-        });
+        }).catch((error) => {
+        console.log(error);
+    	});
     }).catch((error) => {
         console.log(error);
     });
